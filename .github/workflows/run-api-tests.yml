@@ -31,11 +31,10 @@ jobs:
         run: dotnet test ${{github.workspace}}/tests/Library.Tests.Api/Library.Tests.Api.csproj --logger "trx;LogFileName=test-results.trx" --results-directory ${{github.workspace}}/tests/Library.Tests.Api/bin/Debug/net8.0/test-results
       # Upload test results as artifacts
       - name: Upload test results
-        if: always()
         uses: actions/upload-artifact@v4.4.2
         with:
           name: test-results
-          path: ${{github.workspace}}/tests/Library.Tests.Api/bin/Debug/net8.0/test-results/
+          path: tests/Library.Tests.Api/bin/Debug/net8.0/**/*.trx
   test-results:
     name: Get Test Results
     runs-on: ubuntu-latest
@@ -48,6 +47,6 @@ jobs:
         with:
           artifact: test-results
           name: api tests results
-          path: 'tests/Library.Tests.Api/bin/Debug/net8.0/test-results/test-results.trx'
+          path: tests/Library.Tests.Api/bin/Debug/net8.0/**/*.trx
           reporter: dotnet-trx
           fail-on-error: false
