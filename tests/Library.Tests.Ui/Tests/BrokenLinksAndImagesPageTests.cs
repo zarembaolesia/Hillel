@@ -24,7 +24,7 @@ public class BrokenLinksAndImagesPageTests
             .WithArgs("--start-maximized")
             .OpenNewPage<BrokenLinksAndImagesPage>();
         Browser.AddRequestResponseLogger();
-        Page!.Open();
+        await Page!.Open();
     }
 
     [SetUp]

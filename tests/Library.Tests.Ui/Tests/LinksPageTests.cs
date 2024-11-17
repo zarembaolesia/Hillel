@@ -24,7 +24,7 @@ public class LinksPageTests
             .WithArgs("--start-maximized")
             .OpenNewPage<LinksPage>();
         Browser.AddRequestResponseLogger();
-        Page!.Open();
+        await Page!.Open();
     }
 
     [SetUp]

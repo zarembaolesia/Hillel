@@ -24,7 +24,7 @@ public class WebTablePageTests
             .WithArgs("--start-maximized")
             .OpenNewPage<WebTablePage>();
         Browser.AddRequestResponseLogger();
-        Page!.OpenAsync();
+        await Page!.OpenAsync();
     }
 
     [SetUp]

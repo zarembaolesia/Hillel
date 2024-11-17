@@ -24,7 +24,7 @@ public class UploadDownloadPageTests
             .WithArgs("--start-maximized")
             .OpenNewPage<UploadDownloadPage>();
         Browser.AddRequestResponseLogger();
-        Page!.Open();
+        await Page!.Open();
     }
 
     [SetUp]
