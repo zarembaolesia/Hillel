@@ -38,12 +38,7 @@ jobs:
   test-results:
     name: Get Test Results
     runs-on: ubuntu-latest
-    needs: run-api-tests
-    steps:
-      # Display test results using dorny/test-reporter
-      - name: Publish Test Report
-        uses: dorny/test-reporter@v1
-        if: always() # Always run this step, even if previous steps fail
+@@ -48,6 +47,6 @@
         with:
           artifact: test-results
           name: api tests results
