@@ -28,7 +28,7 @@ jobs:
       with:
         artifact: test-results
         name: api tests results
-        path: tests/Library.Tests.Api/bin/Debug/net8.0/**/*.trx  # Correct path here
+        path: tests/Library.Tests.Api/bin/Debug/net8.0/**/*.trx
         reporter: dotnet-trx
         fail-on-error: false
         path-replace-backslashes: false
